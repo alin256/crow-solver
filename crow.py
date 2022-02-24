@@ -54,7 +54,7 @@ def get_win_probabiltiy(fruit_left, steps_left, depth=0):
 
 if __name__ == '__main__':
     print(get_win_probabiltiy([4, 4, 4, 4], 6))
-    print(get_win_probabiltiy([3, 3, 3, 3], 4))
+    print(get_win_probabiltiy([2, 2, 2, 2], 3))
     best = 1.
     best_tuple = 0
     min_crow_steps = 3
@@ -64,7 +64,7 @@ if __name__ == '__main__':
         my_list = [rand_fruit, rand_fruit, rand_fruit, rand_fruit]
         my_crow = randint(min_crow_steps, 6)
         result = get_win_probabiltiy(my_list, my_crow)
-        if abs(result - 0.5) < best - 1e-7 and result > 0.5:
+        if abs(result - 0.5) < best - 1e-7:
             best_tuple = (my_list, my_crow)
             best = abs(result - 0.5)
     print(best_tuple, get_win_probabiltiy(best_tuple[0], best_tuple[1]))
